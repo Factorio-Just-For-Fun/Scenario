@@ -29,7 +29,7 @@ local function check_entity(entity)
         return true
     end
 
-    if next(entity.circuit_connected_entities.red) ~= nil or next(entity.circuit_connected_entities.green) ~= nil then
+    if next(entity.get_circuit_network(defines.wire_connector_id.circuit_red)) ~= nil or next(entity.get_circuit_network(defines.wire_connector_id.circuit_green)) ~= nil then
         -- connected to circuit network
         return true
     end
