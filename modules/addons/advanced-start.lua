@@ -43,7 +43,8 @@ Event.on_init(function()
     remote.call('freeplay', 'set_skip_intro', config.skip_intro)
     if config.research_queue_from_start then
         for _, force in pairs(game.forces) do
-            force.research_queue_enabled = true
+            -- #TODO 2.0 Wontfix - no replacement added
+            -- force.research_queue_enabled = true
         end
     end
     if not config.disable_base_game_silo_script then
