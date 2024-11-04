@@ -176,7 +176,7 @@ Event.on_nth_tick(60, function()
 			table.insert(force_research, {
 				name = research.name,
 				level = research.level,
-				progress = force.get_saved_technology_progress(research) or 0,
+				progress = force.technologies[research].saved_progress or 0,
 			})
 		end
 
