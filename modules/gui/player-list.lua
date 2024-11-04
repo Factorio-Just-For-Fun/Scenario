@@ -120,7 +120,7 @@ end)
         -- LMB will open the map to the selected player
         local position = selected_player.position
         local surface = selected_player.surface
-        event.player.set_controller(type="remote", position=position, surface=surface)
+        event.player.set_controller({type="remote", position=position, surface=surface})
     else
         -- RMB will toggle the settings
         local old_selected_player_name = SelectedPlayer:get(player)

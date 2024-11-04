@@ -58,7 +58,7 @@ end
 --- Get where a function was defined as a string
 local function get_defined_at(level)
     local debug_info = debug.getinfo(level, "Sn")
-    local file_name = debug_info.source:match('^.+/currently%-playing/(.+)$'):sub(1, -5)
+    local file_name = debug_info.source:match('^.+__level__/(.+)$'):sub(1, -5)
     local func_name = debug_info.name or ("<anonymous:"..debug_info.linedefined..">")
     return file_name..":"..func_name
 end

@@ -127,7 +127,7 @@ end)
 :on_click(function(player, element, _)
     local rocket_silo_name = element.parent.caption
     local rocket_silo = Rockets.get_silo_entity(rocket_silo_name)
-    player.set_controller(type="remote", position=rocket_silo.position, surface=rocket_silo.surface)
+    player.set_controller({type="remote", position=rocket_silo.position, surface=rocket_silo.surface})
 end)
 
 --- Base element for each rocket in the progress list

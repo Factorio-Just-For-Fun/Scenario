@@ -15,6 +15,6 @@ Commands.new_command('find-on-map', {'expcom-find.description'}, 'Find a player 
 :register(function(player, action_player)
     local position = action_player.position
     local surface = action_player.surface
-    player.set_controller(type="remote", position=position, surface=surface)
+    player.set_controller({type="remote", position=position, surface=surface})
     return Commands.success -- prevents command complete message from showing
 end)

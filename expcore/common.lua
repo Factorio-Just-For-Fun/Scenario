@@ -255,7 +255,7 @@ local file_path = get_file_path()
 ]]
 function Common.get_file_path(offset)
     offset = offset or 0
-    return debug.getinfo(offset+2, 'S').source:match('^.+/currently%-playing/(.+)$'):sub(1, -5)
+    return debug.getinfo(offset+2, 'S').source:match('^.+__level__/(.+)$'):sub(1, -5)
 end
 
 --[[-- Converts a table to an enum
