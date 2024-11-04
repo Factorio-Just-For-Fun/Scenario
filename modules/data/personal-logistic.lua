@@ -33,9 +33,9 @@ function pl.pl(type, target, amount)
         local v_min = math.ceil(v.min * amount)
         local v_max = math.ceil(v.max * amount)
 
-        if v.stack and v.stack ~= 1 and v.type ~= 'weapon' then
-            v_min = math.floor(v_min / v.stack) * v.stack
-            v_max = math.ceil(v_max / v.stack) * v.stack
+        if v.bulk and v.bulk ~= 1 and v.type ~= 'weapon' then
+            v_min = math.floor(v_min / v.bulk) * v.bulk
+            v_max = math.ceil(v_max / v.bulk) * v.bulk
         end
 
         if v.upgrade_of == nil then
@@ -43,7 +43,7 @@ function pl.pl(type, target, amount)
                 if stats.get_input_count(k) < config.production_required[v.type] then
                     if v_min > 0 then
                         if v_min == v_max then
-                            v_min = math.floor((v_max * 0.5) / v.stack) * v.stack
+                            v_min = math.floor((v_max * 0.5) / v.bulk) * v.bulk
                         end
 
                     else
