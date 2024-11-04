@@ -584,7 +584,7 @@ local function handle_circuit_interfaces()
 
             -- Clear remaining signals to prevent outdated values being present (caused by count > 0 check)
             for clear_index = signal_index, max_signals do
-                if not circuit_oc.get_signal(clear_index).signal then
+                if not circuit_oc.get_signals(clear_index).signal then
                     break -- There are no more signals to clear
                 end
 
