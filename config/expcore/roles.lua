@@ -242,10 +242,9 @@ Roles.set_default('Guest')
 Roles.define_role_order{
     'System', -- Best to keep root at top
     'Administrator',
-    
+    'Moderator',
     'Supporter',
     'Veteran',
-    'Member',
     'Regular',
     'Jail',
     'Guest' -- Default must be last if you want to apply restrictions to other roles
