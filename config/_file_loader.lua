@@ -15,7 +15,7 @@ return {
     'modules.commands.admin-chat',
     'modules.commands.admin-markers',
     'modules.commands.teleport',
-    'modules.commands.cheat-mode',
+    -- FJFF Disabled 'modules.commands.cheat-mode',
     'modules.commands.ratio',
     'modules.commands.interface',
     'modules.commands.help',
@@ -29,7 +29,7 @@ return {
     'modules.commands.warnings',
     'modules.commands.find',
     'modules.commands.home',
-    'modules.commands.connect',
+    -- FJFF Disabled 'modules.commands.connect',
     'modules.commands.last-location',
     'modules.commands.protection',
     'modules.commands.spectate',
@@ -40,7 +40,7 @@ return {
     'modules.commands.train',
     'modules.commands.friendly-fire',
     'modules.commands.research',
-    'modules.commands.vlayer',
+    -- FJFF Disabled 'modules.commands.vlayer',
     'modules.commands.enemy',
     'modules.commands.waterfill',
     'modules.commands.artillery',
@@ -51,14 +51,14 @@ return {
     'modules.addons.damage-popups',
     'modules.addons.death-logger',
     'modules.addons.advanced-start',
-    'modules.addons.spawn-area',
-    'modules.addons.compilatron',
-    'modules.addons.scorched-earth',
+    -- FJFF Disabled 'modules.addons.spawn-area',
+    -- FJFF Disabled 'modules.addons.compilatron',
+    -- FJFF Disabled 'modules.addons.scorched-earth',
     'modules.addons.pollution-grading',
-    'modules.addons.station-auto-name',
+    -- FJFF Disabled 'modules.addons.station-auto-name',
     'modules.addons.discord-alerts',
-    'modules.addons.chat-reply',
-    'modules.addons.tree-decon',
+    -- FJFF Disabled 'modules.addons.chat-reply',
+    -- FJFF Disabled 'modules.addons.tree-decon',
     'modules.addons.afk-kick',
     'modules.addons.report-jail',
     'modules.addons.protection-jail',
@@ -70,7 +70,7 @@ return {
     'modules.addons.logging',
 
     -- Control
-    'modules.control.vlayer',
+    -- FJFF Disabled 'modules.control.vlayer',
 
     --- Data
     'modules.data.statistics',
@@ -84,23 +84,23 @@ return {
     'modules.data.language',
 
     --- GUI
-    'modules.gui.readme',
+    -- FJFF Disabled 'modules.gui.readme',
     'modules.gui.rocket-info',
     'modules.gui.science-info',
     'modules.gui.autofill',
-    'modules.gui.warp-list',
+    -- FJFF Disabled 'modules.gui.warp-list',
     'modules.gui.task-list',
     'modules.gui.player-list',
     'modules.gui.server-ups',
-    'modules.gui.bonus',
-    'modules.gui.vlayer',
+    -- FJFF Disabled 'modules.gui.bonus',
+    -- FJFF Disabled 'modules.gui.vlayer',
     'modules.gui.research',
     'modules.gui.module',
     'modules.gui.landfill',
     'modules.gui.production',
     'modules.gui.playerdata',
     'modules.gui.surveillance',
-    'modules.graftorio.require', -- graftorio
+    -- FJFF Disabled 'modules.graftorio.require', -- graftorio
     'modules.gui.toolbar', -- must be loaded last to register toolbar handlers
 
     --- Config Files

@@ -10,13 +10,14 @@ local Permission_Groups = require 'expcore.permission_groups' --- @dep expcore.p
 Permission_Groups.new_group('Admin')
 :allow_all()
 :disallow{
-    'add_permission_group', -- admin
-    'delete_permission_group',
-    'edit_permission_group',
-    'import_permissions_string',
-    'map_editor_action',
-    'toggle_map_editor',
-    'change_multiplayer_config',
+    -- FJFF - We allow admins access to this
+    -- 'add_permission_group', -- admin
+    -- 'delete_permission_group',
+    -- 'edit_permission_group',
+    -- 'import_permissions_string',
+    -- 'map_editor_action',
+    -- 'toggle_map_editor',
+    -- 'change_multiplayer_config',
     'set_heat_interface_mode',
     'set_heat_interface_temperature',
     'set_infinity_container_filter_item',
