@@ -41,9 +41,9 @@ if _DEBUG or true then
 
     local names = {}
     Global.names = names
-
+    
     function Global.register(tbl, callback)
-        local filepath = debug.getinfo(2, 'S').source:match('^.+/currently%-playing/(.+)$'):sub(1, -5)
+        local filepath = debug.getinfo(2, 'S').source:match('^.+__level__/(.+)$'):sub(1, -5)
         local token = Token.register_global(tbl)
 
         names[token] = concat {token, ' - ', filepath}
@@ -56,7 +56,7 @@ if _DEBUG or true then
     end
 
     function Global.register_init(tbl, init_handler, callback)
-        local filepath = debug.getinfo(2, 'S').source:match('^.+/currently%-playing/(.+)$'):sub(1, -5)
+        local filepath = debug.getinfo(2, 'S').source:match('^.+__level__/(.+)$'):sub(1, -5)
         local token = Token.register_global(tbl)
 
         names[token] = concat {token, ' - ', filepath}
