@@ -15,11 +15,13 @@ return {
     ['purge']=true,
     ['c']=true,
     ['command']=true,
+    ['sc']=true,
     ['silent-command']=true,
     ['measured-command']=true,
     ['banlist']=true,
     ['permissions']=true,
     ['editor']=true,
     ['cheat']=true,
+    ['o']=false,
     ['open']=false
 }
