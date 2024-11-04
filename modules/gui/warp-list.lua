@@ -221,7 +221,8 @@ end)
     local warp_id = element.parent.caption
     local warp = Warps.get_warp(warp_id)
     local position = warp.position
-    player.zoom_to_world(position, 1.5)
+    local suface = warp.suface
+    player.set_controller(type="remote", position=position, surface=surface)
 end)
 :static_name(Gui.unique_static_name)
 
