@@ -73,8 +73,8 @@ local function clear_module(player, area, machine)
             local m_current_module_content = m_current_module.get_contents()
 
             if m_current_module_content then
-                for k, m in pairs(m_current_module_content) do
-                    player.surface.spill_item_stack(entity.bounding_box.left_top, {name=k, count=m}, true, player.force, false)
+                for k, m, q in pairs(m_current_module_content) do
+                    player.surface.spill_item_stack(entity.bounding_box.left_top, {name=k, count=m, quality=q}, true, player.force, false)
                 end
             end
 

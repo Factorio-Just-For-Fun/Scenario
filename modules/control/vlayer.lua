@@ -356,7 +356,7 @@ local function handle_input_interfaces()
         else
             local inventory = interface.get_inventory(defines.inventory.chest)
 
-            for name, count in pairs(inventory.get_contents()) do
+            for name, count, quality in pairs(inventory.get_contents()) do
                 if config.allowed_items[name] then
                     if config.allowed_items[name].modded then
                         if config.modded_auto_downgrade then
