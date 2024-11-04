@@ -59,8 +59,7 @@ Permission_Groups.new_group('Standard')
     'set_infinity_pipe_filter',
     'admin_action', -- trusted
     'change_programmable_speaker_alert_parameters', -- standard
-    'drop_item',
-    'set_auto_launch_rocket'
+    'drop_item'
 }
 
 Permission_Groups.new_group('Guest')
@@ -81,7 +80,6 @@ Permission_Groups.new_group('Guest')
     'admin_action', -- trusted
     'change_programmable_speaker_alert_parameters', -- standard
     'drop_item',
-    'set_auto_launch_rocket',
     'change_programmable_speaker_parameters', -- guest
     'change_train_stop_station',
     --'deconstruct',
@@ -89,10 +87,8 @@ Permission_Groups.new_group('Guest')
     'remove_train_station',
     'reset_assembling_machine',
     'rotate_entity',
-    'use_artillery_remote',
     'launch_rocket',
     'cancel_research',
-    'activate_cut',
     'flush_opened_entity_fluid',
     'flush_opened_entity_specific_fluid'
 }
