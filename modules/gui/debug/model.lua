@@ -40,7 +40,7 @@ local function get_lua_object_type_safe(obj)
 end
 
 local function inspect_process(item)
-    if type(item) ~= 'table' or type(item.__self) ~= 'userdata' then
+    if type(item) ~= 'table' or type(item) ~= 'userdata' then
         return item
     end
 

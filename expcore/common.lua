@@ -402,7 +402,7 @@ function Common.player_return(value, colour, player)
     -- converts the value to a string
     local returnAsString
     if Common.type_check(value, 'table') or type(value) == 'userdata' then
-        if Common.type_check(value.__self, 'userdata') or type(value) == 'userdata' then
+        if type(value) == 'userdata' then
             -- value is userdata
             returnAsString = 'Cant Display Userdata'
         elseif Common.type_check(value[1], 'string') and string.find(value[1], '.+[.].+') and not string.find(value[1], '%s') then

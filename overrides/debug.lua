@@ -109,7 +109,7 @@ end
 function Debug.object_type(object)
     local obj_type = type(object)
 
-    if obj_type ~= 'table' or type(object.__self) ~= 'userdata' then
+    if obj_type ~= 'table' or type(object) ~= 'userdata' then
         return obj_type
     end
 
