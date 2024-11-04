@@ -3,6 +3,7 @@
 
 return {
 	players={ --- @setting players list of all players and the colour in rgb256 that they will recive upon joining
+		-- ExpGaming originals
 		PHIDIAS0303={r=255,g=255,b=255},
 		BADgamerNL={r=255,g=20,b=147},
 		arty714={r=150,g=68,b=161},
@@ -20,7 +21,14 @@ return {
 		ArPiiX={r=0,g=255,b=0},
 		NextIdea={r=255,g=255,b=255},
 		hamsterbryan={r=0,g=255,b=0},
-		XenoCyber={r=0,g=128,b=255}
+		XenoCyber={r=0,g=128,b=255},
+
+		-- FJFF
+		joloman2 = {r = 0, g = 255, b = 255},
+		ciderdave = {r = 0, g = 0, b = 255},
+		Cykloid = {r = 0, g = 255, b = 0},
+		Spzi = {r = 111, g = 111, b = 252},
+		mskitty = {r = 255, g = 105, b = 180}
 	},
 	disallow = { --- @setting disallow colours which will not given to players; the value does not matter it is only the key which is checked
 		black = {r = 0, g = 0, b = 0},
