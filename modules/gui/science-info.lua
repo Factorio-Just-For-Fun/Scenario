@@ -300,7 +300,7 @@ Gui.element(function(definition, parent)
             type = 'label',
             caption = null_time_short,
             tooltip = null_time_long,
-            style = 'heading_1_label'
+            style = 'heading_2_label'
         }
 
         -- Update the eta

@@ -71,7 +71,7 @@ local function research_add_log()
 		result_data[res['disp'][i]['raw_name']] = research.time[i]
 	end
 
-	helpers.write_file(config.file_name, game.table_to_json(result_data) .. '\n', true, 0)
+	helpers.write_file(config.file_name, helpers.table_to_json(result_data) .. '\n', true, 0)
 end
 
 local function research_res_n(res_)
@@ -153,7 +153,7 @@ local function research_gui_update()
 		local res_i = res_n + i - 3
 
 		if res['disp'][res_i] then
-			res_disp[i]['name'] = {'expcom-res.res-name', res['disp'][res_i]['raw_name'], game.technology_prototypes[res['disp'][res_i]['raw_name']].localised_name}
+			res_disp[i]['name'] = {'expcom-res.res-name', res['disp'][res_i]['raw_name'], prototypes.technology[res['disp'][res_i]['raw_name']].localised_name}
 
 			if research.time[res_i] == 0 then
 				res_disp[i]['target'] = res['disp'][res_i].target_disp

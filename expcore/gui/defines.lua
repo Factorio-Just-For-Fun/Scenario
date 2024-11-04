@@ -125,7 +125,7 @@ Gui.element(function(_, parent, caption, tooltip, add_alignment, name, label_nam
         header.add{
             name = label_name or 'header_label',
             type = 'label',
-            style = 'heading_1_label',
+            style = 'heading_2_label',
             caption = caption,
             tooltip = tooltip
         }
@@ -173,7 +173,7 @@ Gui.element(function(_, parent, caption, tooltip, add_alignment, name)
         footer.add{
             name = 'footer_label',
             type = 'label',
-            style = 'heading_1_label',
+            style = 'heading_2_label',
             caption = caption,
             tooltip = tooltip
         }
@@ -207,7 +207,7 @@ Gui.element(function(_, parent, name, _)
         name = 'container',
         type = 'frame',
         direction = 'vertical',
-        style = 'window_content_frame_packed'
+        style = 'tabbed_pane_frame'
     }
 end)
 :style(function(style, element, _,width)
@@ -290,7 +290,7 @@ Gui.element(function(_, parent, width, caption, tooltip)
         type = 'label',
         caption = caption,
         tooltip = tooltip,
-        style = 'heading_1_label'
+        style = 'heading_2_label'
     }
     Gui.bar(title_flow)
 

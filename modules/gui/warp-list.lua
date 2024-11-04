@@ -222,7 +222,7 @@ end)
     local warp = Warps.get_warp(warp_id)
     local position = warp.position
     local suface = warp.suface
-    player.set_controller({type="remote", position=position, surface=surface})
+    player.set_controller({type=defines.controllers.remote, position=position, surface=surface})
 end)
 :static_name(Gui.unique_static_name)
 

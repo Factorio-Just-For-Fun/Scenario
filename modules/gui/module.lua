@@ -32,8 +32,8 @@ end
 local prod_module_names = {}
 
 local function get_module_name()
-    for name, item in pairs(game.item_prototypes) do
-        if item.module_effects and item.module_effects.productivity and item.module_effects.productivity.bonus > 0 then
+    for name, item in pairs(prototypes.item) do
+        if item.module_effects and item.module_effects.productivity and item.module_effects.productivity > 0 then
             prod_module_names[#prod_module_names + 1] = name
         end
     end

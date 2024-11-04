@@ -127,7 +127,7 @@ end)
 :on_click(function(player, element, _)
     local rocket_silo_name = element.parent.caption
     local rocket_silo = Rockets.get_silo_entity(rocket_silo_name)
-    player.set_controller({type="remote", position=rocket_silo.position, surface=rocket_silo.surface})
+    player.set_controller({type=defines.controllers.remote, position=rocket_silo.position, surface=rocket_silo.surface})
 end)
 
 --- Base element for each rocket in the progress list
@@ -423,7 +423,7 @@ end
 local toggle_section =
 Gui.element{
 	type = 'sprite-button',
-	sprite = 'utility/expand_dark',
+	sprite = 'utility/expand_dots',
 	hovered_sprite = 'utility/expand',
 	tooltip = {'rocket-info.toggle-section-tooltip'},
 	name = Gui.unique_static_name
@@ -434,11 +434,11 @@ Gui.element{
 	local flow_name = header_flow.caption
 	local flow = header_flow.parent.parent[flow_name]
 	if Gui.toggle_visible_state(flow) then
-        element.sprite = 'utility/collapse_dark'
+        element.sprite = 'utility/collapse'
         element.hovered_sprite = 'utility/collapse'
         element.tooltip = {'rocket-info.toggle-section-collapse-tooltip'}
 	else
-        element.sprite = 'utility/expand_dark'
+        element.sprite = 'utility/expand_dots'
         element.hovered_sprite = 'utility/expand'
         element.tooltip = {'rocket-info.toggle-section-tooltip'}
 	end
@@ -523,7 +523,7 @@ end)
 
 --- Button on the top flow used to toggle the container
 -- @element toggle_rocket_info
-Gui.left_toolbar_button('item/satellite', {'rocket-info.main-tooltip'}, rocket_list_container, function(player)
+Gui.left_toolbar_button('entity/rocket-silo', {'rocket-info.main-tooltip'}, rocket_list_container, function(player)
     return Roles.player_allowed(player, 'gui/rocket-info')
 end)
 

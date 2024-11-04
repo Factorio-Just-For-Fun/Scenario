@@ -22,6 +22,6 @@ Commands.new_command("collectdata", "Collect data for RCON usage")
 		forcestats.collect_production()
 		forcestats.collect_loginet()
 	end
-	rcon.print(game.table_to_json(general.data.output))
+	rcon.print(helpers.table_to_json(general.data.output))
 	return Commands.success()
 end)

@@ -114,7 +114,7 @@ local no_tasks_found =
         local center =
             header.add {
             type = "flow",
-            style = "centering_horizontal_flow"
+            style = "horizontal_flow"
         }
         center.style.horizontally_stretchable = true
         center.add {
@@ -156,7 +156,7 @@ local subfooter_label =
         return parent.add {
             name = "footer_label",
             type = "label",
-            style = "heading_1_label",
+            style = "heading_2_label",
             caption = caption
         }
     end
@@ -257,7 +257,7 @@ local task_view_edit_button =
 local task_view_close_button =
 Gui.element{
 	type = "sprite-button",
-	sprite = "utility/collapse_dark",
+	sprite = "utility/collapse",
 	hovered_sprite = "utility/collapse",
 	tooltip = {"task-list.close-tooltip"}
 }
