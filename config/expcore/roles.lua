@@ -49,7 +49,7 @@ Roles.new_role('Administrator','Admin')
     'command/research-all'
 }
 
-Roles.new_role('Mod')
+Roles.new_role('Moderator')
 :set_permission_group('Admin')
 :set_custom_color{r=0,g=170,b=0}
 :set_flag('is_admin')
