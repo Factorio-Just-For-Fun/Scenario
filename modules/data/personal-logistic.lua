@@ -7,13 +7,15 @@ function pl.pl(type, target, amount)
     local c
     local s
 
-    if type == 'p' then
-        c = target.clear_personal_logistic_slot
-        s = target.set_personal_logistic_slot
 
-    elseif type == 's' then
-        c = target.clear_vehicle_logistic_slot
-        s = target.set_vehicle_logistic_slot
+    -- #TODO 2.0 Wontfix
+    -- if type == 'p' then
+    --     c = target.clear_personal_logistic_slot
+    --     s = target.set_personal_logistic_slot
+
+    -- elseif type == 's' then
+    --     c = target.clear_vehicle_logistic_slot
+    --     s = target.set_vehicle_logistic_slot
 
     else
         return

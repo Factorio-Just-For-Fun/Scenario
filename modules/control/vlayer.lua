@@ -419,22 +419,23 @@ local function handle_output_interfaces()
         else
             local inventory = interface.get_inventory(defines.inventory.chest)
 
-            for i = 1, interface.request_slot_count do
-                local request = interface.get_request_slot(i)
+            -- -- #TODO 2.0 Wontfix
+            -- for i = 1, interface.request_slot_count do
+            --     local request = interface.get_request_slot(i)
 
-                if request and config.allowed_items[request.name] then
-                    local current_amount = inventory.get_item_count(request.name)
-                    local request_amount = math.min(request.count - current_amount, vlayer_data.storage.items[request.name])
+            --     if request and config.allowed_items[request.name] then
+            --         local current_amount = inventory.get_item_count(request.name)
+            --         local request_amount = math.min(request.count - current_amount, vlayer_data.storage.items[request.name])
 
-                    if request_amount > 0 and inventory.can_insert({name=request.name, count=request_amount}) then
-                        local removed_item_count = vlayer.remove_item(request.name, request_amount)
+            --         if request_amount > 0 and inventory.can_insert({name=request.name, count=request_amount}) then
+            --             local removed_item_count = vlayer.remove_item(request.name, request_amount)
 
-                        if removed_item_count > 0 then
-                            inventory.insert({name=request.name, count=removed_item_count})
-                        end
-                    end
-                end
-            end
+            --             if removed_item_count > 0 then
+            --                 inventory.insert({name=request.name, count=removed_item_count})
+            --             end
+            --         end
+            --     end
+            -- end
         end
     end
 end
