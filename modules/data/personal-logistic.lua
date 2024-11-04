@@ -17,7 +17,10 @@ function pl.pl(type, target, amount)
     --     c = target.clear_vehicle_logistic_slot
     --     s = target.set_vehicle_logistic_slot
 
-    else
+    -- else
+    --     return
+    -- end
+    if true then
         return
     end
 

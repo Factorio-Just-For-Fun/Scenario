@@ -121,7 +121,7 @@ function Production.get_production(force, surface, item_name, precision)
 
     return {
         made=made,
-        stored=stored
+        stored=stored,
         used=used,
         net=made-used
     }
