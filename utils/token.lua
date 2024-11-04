@@ -26,22 +26,22 @@ function Token.get(token_id)
     return tokens[token_id]
 end
 
-global.tokens = {}
+storage.tokens = {}
 
 function Token.register_global(var)
-    local c = #global.tokens + 1
+    local c = #storage.tokens + 1
 
-    global.tokens[c] = var
+    storage.tokens[c] = var
 
     return c
 end
 
 function Token.get_global(token_id)
-    return global.tokens[token_id]
+    return storage.tokens[token_id]
 end
 
 function Token.set_global(token_id, var)
-    global.tokens[token_id] = var
+    storage.tokens[token_id] = var
 end
 
 local uid_counter = 0
@@ -57,13 +57,13 @@ function Token.uid()
 end
 
 function Token.runtime_uid()
-    if not global.uid_counter then
-        global.uid_counter = 0
+    if not storage.uid_counter then
+        storage.uid_counter = 0
     end
 
-    global.uid_counter = global.uid_counter + 1
+    storage.uid_counter = storage.uid_counter + 1
 
-    return global.uid_counter+uid_counter
+    return storage.uid_counter+uid_counter
 end
 
 return Token

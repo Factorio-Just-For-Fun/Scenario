@@ -42,12 +42,12 @@ end
 
 Event.add(defines.events.on_player_created, function(event)
   local player = game.players[event.player_index]
-  util.insert_safe(player, global.created_items)
+  util.insert_safe(player, storage.created_items)
 
-  local r = global.chart_distance or 200
+  local r = storage.chart_distance or 200
   player.force.chart(player.surface, {{player.position.x - r, player.position.y - r}, {player.position.x + r, player.position.y + r}})
 
-  if not global.skip_intro then
+  if not storage.skip_intro then
     if game.is_multiplayer() then
       player.print({"msg-intro"})
     else
@@ -62,7 +62,7 @@ end)
 
 Event.add(defines.events.on_player_respawned, function(event)
   local player = game.players[event.player_index]
-  util.insert_safe(player, global.respawn_items)
+  util.insert_safe(player, storage.respawn_items)
   if use_silo_script then
     silo_script.on_event(event)
   end
@@ -75,8 +75,8 @@ if use_silo_script then
 end
 
 Event.on_init(function()
-  global.created_items = created_items()
-  global.respawn_items = respawn_items()
+  storage.created_items = created_items()
+  storage.respawn_items = respawn_items()
   if use_silo_script then
     silo_script.on_init()
   end
@@ -90,22 +90,22 @@ end
 remote.add_interface("freeplay",
 {
   get_created_items = function()
-    return global.created_items
+    return storage.created_items
   end,
   set_created_items = function(map)
-    global.created_items = map
+    storage.created_items = map
   end,
   get_respawn_items = function()
-    return global.respawn_items
+    return storage.respawn_items
   end,
   set_respawn_items = function(map)
-    global.respawn_items = map
+    storage.respawn_items = map
   end,
   set_skip_intro = function(bool)
-    global.skip_intro = bool
+    storage.skip_intro = bool
   end,
   set_chart_distance = function(value)
-    global.chart_distance = tonumber(value)
+    storage.chart_distance = tonumber(value)
   end,
   set_disable_crashsite = function()
   end,

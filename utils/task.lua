@@ -11,30 +11,30 @@ local Token = require 'utils.token' --- @dep utils.token
 
 local Task = {}
 
-global.callbacks = global.callbacks or PriorityQueue.new()
-global.next_async_callback_time = -1
-global.task_queue = global.task_queue or Queue.new()
-global.total_task_weight = 0
-global.task_queue_speed = 1
+storage.callbacks = storage.callbacks or PriorityQueue.new()
+storage.next_async_callback_time = -1
+storage.task_queue = storage.task_queue or Queue.new()
+storage.total_task_weight = 0
+storage.task_queue_speed = 1
 
 local function comp(a, b)
     return a.time < b.time
 end
 
-global.tpt = global.task_queue_speed
+storage.tpt = storage.task_queue_speed
 local function get_task_per_tick()
     if game.tick % 300 == 0 then
-        local size = global.total_task_weight
-        global.tpt = math.floor(math.log(size + 1, 10)) * global.task_queue_speed
-        if global.tpt < 1 then
-            global.tpt = 1
+        local size = storage.total_task_weight
+        storage.tpt = math.floor(math.log(size + 1, 10)) * storage.task_queue_speed
+        if storage.tpt < 1 then
+            storage.tpt = 1
         end
     end
-    return global.tpt
+    return storage.tpt
 end
 
 local function on_tick()
-    local queue = global.task_queue
+    local queue = storage.task_queue
     for i = 1, get_task_per_tick() do
         local task = Queue.peek(queue)
         if task ~= nil then
@@ -47,15 +47,15 @@ local function on_tick()
                     log(result)
                 end
                 Queue.pop(queue)
-                global.total_task_weight = global.total_task_weight - task.weight
+                storage.total_task_weight = storage.total_task_weight - task.weight
             elseif not result then
                 Queue.pop(queue)
-                global.total_task_weight = global.total_task_weight - task.weight
+                storage.total_task_weight = storage.total_task_weight - task.weight
             end
         end
     end
 
-    local callbacks = global.callbacks
+    local callbacks = storage.callbacks
     local callback = PriorityQueue.peek(callbacks)
     while callback ~= nil and game.tick >= callback.time do
         local success, result = pcall(Token.get(callback.func_token), callback.params)
@@ -82,7 +82,7 @@ function Task.set_timeout_in_ticks(ticks, func_token, params)
     end
     local time = game.tick + ticks
     local callback = {time = time, func_token = func_token, params = params}
-    PriorityQueue.push(global.callbacks, callback, comp)
+    PriorityQueue.push(storage.callbacks, callback, comp)
 end
 
 --- Allows you to set a timer (in seconds) after which the tokened function will be run with params given as an argument
@@ -106,8 +106,8 @@ end
 -- Ex. if the task is expected to repeat multiple times (ie. the function returns true and loops several ticks)
 function Task.queue_task(func_token, params, weight)
     weight = weight or 1
-    global.total_task_weight = global.total_task_weight + weight
-    Queue.push(global.task_queue, {func_token = func_token, params = params, weight = weight})
+    storage.total_task_weight = storage.total_task_weight + weight
+    Queue.push(storage.task_queue, {func_token = func_token, params = params, weight = weight})
 end
 
 Event.add(defines.events.on_tick, on_tick)

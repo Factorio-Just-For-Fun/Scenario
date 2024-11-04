@@ -156,9 +156,9 @@ local copy = table.deep_copy
 local trace = debug.traceback
 
 --- Save datastores in the global table
-global.datastores = Data
+storage.datastores = Data
 Event.on_load(function()
-    Data = global.datastores
+    Data = storage.datastores
     for datastoreName, datastore in pairs(Datastores) do
         datastore.data = Data[datastoreName]
     end

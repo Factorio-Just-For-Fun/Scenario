@@ -29,11 +29,11 @@ end
 
 ]]
 function External.valid()
-    if global.ext == nil then return false end
-    if ext == global.ext and var == ext.var then
+    if storage.ext == nil then return false end
+    if ext == storage.ext and var == ext.var then
         return var ~= nil
     else
-        ext = global.ext
+        ext = storage.ext
         var = ext.var
         return var ~= nil
     end
