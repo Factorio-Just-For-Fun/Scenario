@@ -11,7 +11,7 @@ local Roles = require 'expcore.roles' --- @dep expcore.roles
 local rolling_stocks = {}
 
 local function landfill_init()
-    for name, _ in pairs(game.get_filtered_entity_prototypes({{filter = 'rolling-stock'}})) do
+    for name, _ in pairs(prototypes.get_entity_filtered({{filter = 'rolling-stock'}})) do
         rolling_stocks[name] = true
     end
 end

@@ -29,8 +29,10 @@ function Game.get_player_from_any(obj)
     local o_type, p = type(obj)
     if o_type == 'table' then
         p = obj
+    elseif o_type == 'userdata' and obj.valid then
+        p = obj
     elseif o_type == 'string' or o_type == 'number' then
-        p = game.players[obj]
+        p = game.get_player(obj)
     end
 
     if p and p.valid and p.is_player() then
@@ -63,13 +65,11 @@ end
 ]]
 function Game.print_floating_text(surface, position, text, color)
     color = color or Color.white
-
-    return surface.create_entity {
-        name = 'tutorial-flying-text',
-        color = color,
-        text = text,
-        position = position
-    }
+    for _, player in pairs(game.connected_players) do
+        if player.surface_index == surface.index then
+            player.create_local_flying_text({text=text, color=color, position=position})
+        end
+    end
 end
 
 --[[

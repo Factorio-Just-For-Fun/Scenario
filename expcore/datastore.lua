@@ -244,12 +244,12 @@ function DatastoreManager.ingest(action, datastoreName, key, valueJson)
         datastore:raw_set(key)
 
     elseif action == 'message' then
-        local success, value = pcall(game.json_to_table, valueJson)
+        local success, value = pcall(helpers.json_to_table, valueJson)
         if not success or value == nil then value = tonumber(valueJson) or valueJson end
         datastore:raise_event('on_message', key, value)
 
     elseif action == 'propagate' or action == 'request' then
-        local success, value = pcall(game.json_to_table, valueJson)
+        local success, value = pcall(helpers.json_to_table, valueJson)
         if not success or value == nil then value = tonumber(valueJson) or valueJson end
         local old_value = datastore:raw_get(key)
         value = datastore:raise_event('on_load', key, value, old_value)
@@ -392,7 +392,7 @@ self:write_action('save', 'TestKey', 'Foo')
 function Datastore:write_action(action, key, value)
     local data = {action, self.name, key}
     if value ~= nil then
-        data[4] = type(value) == 'table' and game.table_to_json(value) or value
+        data[4] = type(value) == 'table' and helpers.table_to_json(value) or value
     end
     helpers.write_file('ext/datastore.out', table.concat(data, ' ')..'\n', true, 0)
 end

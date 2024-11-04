@@ -379,7 +379,7 @@ Gui.element{
             local surface = i[vlayer_control_type_list[target]][n].position
 
             if pos then
-                player.set_controller({type="remote", position=pos, surface=surface})
+                player.set_controller({type=defines.controllers.remote, position=pos, surface=surface})
                 player.print{'vlayer.result-interface-location', {'vlayer.control-type-' .. vlayer_control_type_list[target]:gsub('_', '-')}, pos_to_gps_string(pos, surface)}
             end
         end
