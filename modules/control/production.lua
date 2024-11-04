@@ -115,11 +115,13 @@ end
 -- @treturn table contains made, used and net
 function Production.get_production(force, item_name, precision)
     local stats = force.item_production_statistics.get_flow_count
-    local made = stats{name=item_name, input=true, precision_index=precision} or 0
-    local used = stats{name=item_name, input=false, precision_index=precision} or 0
+    local made = stats{name=item_name, category="input", precision_index=precision} or 0
+    local stored = stats{name=item_name, category="storage", precision_index=precision} or 0
+    local used = stats{name=item_name, category="output", precision_index=precision} or 0
 
     return {
         made=made,
+        stored=stored
         used=used,
         net=made-used
     }
