@@ -245,7 +245,6 @@ Roles.define_role_order{
     'Moderator',
     'Supporter',
     'Veteran',
-    'Member',
     'Regular',
     'Jail',
     'Guest' -- Default must be last if you want to apply restrictions to other roles
