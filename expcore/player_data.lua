@@ -82,7 +82,7 @@ end)
 Commands.new_command('save-data', 'Writes all your player data to a file on your computer')
 :register(function(player)
     player.print{'expcore-data.get-data'}
-    game.write_file('expgaming_player_data.json', game.table_to_json(PlayerData:get(player, {})), false, player.index)
+    helpers.write_file('expgaming_player_data.json', game.table_to_json(PlayerData:get(player, {})), false, player.index)
 end)
 
 --- Async function called after 5 seconds with no player data loaded

@@ -71,7 +71,7 @@ local function research_add_log()
 		result_data[res['disp'][i]['raw_name']] = research.time[i]
 	end
 
-	game.write_file(config.file_name, game.table_to_json(result_data) .. '\n', true, 0)
+	helpers.write_file(config.file_name, game.table_to_json(result_data) .. '\n', true, 0)
 end
 
 local function research_res_n(res_)

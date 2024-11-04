@@ -394,7 +394,7 @@ function Datastore:write_action(action, key, value)
     if value ~= nil then
         data[4] = type(value) == 'table' and game.table_to_json(value) or value
     end
-    game.write_file('ext/datastore.out', table.concat(data, ' ')..'\n', true, 0)
+    helpers.write_file('ext/datastore.out', table.concat(data, ' ')..'\n', true, 0)
 end
 
 ----- Datastore Local

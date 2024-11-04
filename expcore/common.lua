@@ -227,7 +227,7 @@ write_json('dump', tbl)
 
 ]]
 function Common.write_json(path, tbl)
-    game.write_file(path, game.table_to_json(tbl)..'\n', true, 0)
+    helpers.write_file(path, game.table_to_json(tbl)..'\n', true, 0)
 end
 
 --[[-- Calls a require that will not error if the file is not found

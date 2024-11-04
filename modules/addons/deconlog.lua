@@ -10,7 +10,7 @@ local config = require 'config.deconlog' --- @dep config.deconlog
 local filepath = "log/decon.log"
 
 local function add_log(data)
-	game.write_file(filepath, data .. "\n", true, 0) -- write data
+	helpers.write_file(filepath, data .. "\n", true, 0) -- write data
 end
 
 local function get_secs()
@@ -35,7 +35,7 @@ local function print_to_players(admin, message)
 end
 
 Event.on_init(function()
-	game.write_file(filepath, "\n", false, 0) -- write data
+	helpers.write_file(filepath, "\n", false, 0) -- write data
 end)
 
 if config.decon_area then
