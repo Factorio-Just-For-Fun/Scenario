@@ -130,7 +130,7 @@ end)
 Event.on_nth_tick(60, function()
     for _, player in pairs(game.connected_players) do
         local frame = Gui.get_left_element(player, production_container)
-        local stat = player.force.item_production_statistics
+        local stat = player.force.get_item_production_statistics(player.surface)
         local precision_value = precision[frame.container['production_st'].disp.table['production_0_e'].selected_index]
         local table = frame.container['production_st'].disp.table
 

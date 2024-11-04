@@ -144,12 +144,13 @@ end)
 
 local function get_science_pack_data(player, science_pack)
     local force = player.force
+    local surface = player.surface
 
     -- Check that some packs have been made
-    local total = Production.get_production_total(force, science_pack)
+    local total = Production.get_production_total(force, surface, science_pack)
     if total.made == 0 then return end
-    local minute = Production.get_production(force, science_pack, defines.flow_precision_index.one_minute)
-    local hour = Production.get_production(force, science_pack, defines.flow_precision_index.one_hour)
+    local minute = Production.get_production(force, surface, science_pack, defines.flow_precision_index.one_minute)
+    local hour = Production.get_production(force, surface, science_pack, defines.flow_precision_index.one_hour)
 
     -- Get the icon style
     local icon_style = 'slot_button'

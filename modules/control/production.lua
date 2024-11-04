@@ -95,8 +95,8 @@ end
 -- @tparam LuaForce force the force to get the data for
 -- @tparam string item_name the name of the item that you want the data about
 -- @treturn table contains total made, used and net
-function Production.get_production_total(force, item_name)
-    local stats = force.item_production_statistics
+function Production.get_production_total(force, surface, item_name)
+    local stats = force.get_item_production_statistics(surface)
     local made = stats.get_input_count(item_name) or 0
     local used = stats.get_output_count(item_name) or 0
 
@@ -113,8 +113,8 @@ end
 -- @tparam string item_name the name of the item that you want the data about
 -- @tparam defines.flow_precision_index precision the precision that you want the data given to
 -- @treturn table contains made, used and net
-function Production.get_production(force, item_name, precision)
-    local stats = force.item_production_statistics.get_flow_count
+function Production.get_production(force, surface, item_name, precision)
+    local stats = force.get_item_production_statistics(surface).get_flow_count
     local made = stats{name=item_name, category="input", precision_index=precision} or 0
     local stored = stats{name=item_name, category="storage", precision_index=precision} or 0
     local used = stats{name=item_name, category="output", precision_index=precision} or 0
