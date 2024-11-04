@@ -249,7 +249,6 @@ Gui.element(function(definition, parent, warp)
     return parent.add{
         type = 'textfield',
         text = warp.name,
-        clear_and_focus_on_right_click = true,
         name = definition.name
     }
 end)
