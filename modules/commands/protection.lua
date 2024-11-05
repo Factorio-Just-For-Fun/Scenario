@@ -90,7 +90,7 @@ end
 --- Remove a render object for a player
 local function remove_render(player, key)
     local render = renders[player.index][key]
-    if render and rendering.is_valid(render) then rendering.destroy(render) end
+    if render then render.destroy() end
     renders[player.index][key] = nil
 end
 
@@ -203,7 +203,7 @@ end)
 Event.add(Selection.events.on_player_selection_end, function(event)
     if event.selection ~= SelectionProtectEntity and event.selection ~= SelectionProtectArea then return end
     for _, id in pairs(renders[event.player_index]) do
-        if rendering.is_valid(id) then rendering.destroy(id) end
+        if id then id.destroy() end
     end
     renders[event.player_index] = nil
 end)
