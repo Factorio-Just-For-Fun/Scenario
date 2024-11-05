@@ -25,7 +25,7 @@ return {
     'modules.commands.jail',
     'modules.commands.repair',
     'modules.commands.reports',
-    'modules.commands.spawn',
+    -- 2.0 Disabled 'modules.commands.spawn',
     'modules.commands.warnings',
     'modules.commands.find',
     'modules.commands.home',
@@ -40,7 +40,7 @@ return {
     'modules.commands.train',
     'modules.commands.friendly-fire',
     'modules.commands.research',
-    'modules.commands.vlayer',
+    -- 2.0 Disabled 'modules.commands.vlayer',
     'modules.commands.enemy',
     'modules.commands.waterfill',
     'modules.commands.artillery',
@@ -70,7 +70,7 @@ return {
     'modules.addons.logging',
 
     -- Control
-    'modules.control.vlayer',
+    -- 2.0 Disabled 'modules.control.vlayer',
 
     --- Data
     'modules.data.statistics',
@@ -92,11 +92,11 @@ return {
     'modules.gui.task-list',
     'modules.gui.player-list',
     'modules.gui.server-ups',
-    'modules.gui.bonus',
-    'modules.gui.vlayer',
+    -- 2.0 Disabled 'modules.gui.bonus',
+    -- 2.0 Disabled 'modules.gui.vlayer',
     'modules.gui.research',
-    'modules.gui.module',
-    'modules.gui.landfill',
+    -- 2.0 Disabled 'modules.gui.module',
+    -- 2.0 Disabled 'modules.gui.landfill',
     'modules.gui.production',
     'modules.gui.playerdata',
     'modules.gui.surveillance',
