@@ -84,11 +84,11 @@ return {
     'modules.data.language',
 
     --- GUI
-    -- FJFF Disabled 'modules.gui.readme',
-    'modules.gui.rocket-info',
-    'modules.gui.science-info',
-    'modules.gui.autofill',
-    -- FJFF Disabled 'modules.gui.warp-list',
+    'modules.gui.readme',
+    -- 2.0 Disabled 'modules.gui.rocket-info',
+    -- 2.0 Disabled as Broken 'modules.gui.science-info',
+    -- 2.0 Disabled 'modules.gui.autofill',
+    'modules.gui.warp-list',
     'modules.gui.task-list',
     'modules.gui.player-list',
     'modules.gui.server-ups',
