@@ -85,9 +85,9 @@ return {
 
     --- GUI
     'modules.gui.readme',
-    'modules.gui.rocket-info',
-    'modules.gui.science-info',
-    'modules.gui.autofill',
+    -- 2.0 Disabled 'modules.gui.rocket-info',
+    -- 2.0 Disabled as Broken 'modules.gui.science-info',
+    -- 2.0 Disabled 'modules.gui.autofill',
     'modules.gui.warp-list',
     'modules.gui.task-list',
     'modules.gui.player-list',
