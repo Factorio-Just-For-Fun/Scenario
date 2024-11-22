@@ -84,7 +84,7 @@ return {
     'modules.data.language',
 
     --- GUI    
-    -- 2.0 Disabled 'modules.gui.readme',
+    2.0 Disabled 'modules.gui.readme',
     -- 2.0 Disabled 'modules.gui.rocket-info',
     -- 2.0 Disabled as Broken 'modules.gui.science-info',
     -- 2.0 Disabled 'modules.gui.autofill',
