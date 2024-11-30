@@ -307,6 +307,7 @@ Roles.override_player_roles{
     ['Evy_D']={ "Moderator" },
     ['Foxologe']={ "Moderator" },
     ['Kerza_']={ "Moderator" },
+    ['RootWyrm']={ "Moderator" },
     ['SilentLog']={ "Moderator" },
     ['Weyoune']={ "Moderator" },
     ['bananna_manuk']={ "Moderator" },
