@@ -83,7 +83,7 @@ Permission_Groups.new_group('Guest')
     'drop_item',
     'change_programmable_speaker_parameters', -- guest
     'change_train_stop_station',
-    --'deconstruct',
+    'deconstruct',
     'remove_cables',
     'remove_train_station',
     'reset_assembling_machine',

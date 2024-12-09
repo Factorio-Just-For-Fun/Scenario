@@ -34,6 +34,7 @@ Roles.new_role('Administrator','Admin')
 :set_flag('is_spectator')
 :set_flag('report-immune')
 :set_flag('instant-respawn')
+:set_flag('deconlog-bypass')
 :set_parent('Moderator')
 :allow{
     'gui/warp-list/bypass-proximity',
@@ -56,7 +57,8 @@ Roles.new_role('Moderator')
 :set_flag('is_spectator')
 :set_flag('report-immune')
 :set_flag('instant-respawn')
-:set_parent('Trainee')
+:set_flag('deconlog-bypass')
+:set_parent('Veteran')
 :allow{
     'command/assign-role',
     'command/unassign-role',
@@ -138,6 +140,7 @@ Roles.new_role('Veteran','Vet')
 :set_permission_group('Trusted')
 :set_custom_color{r=140,g=120,b=200}
 :set_parent('Member')
+:set_flag('deconlog-bypass')
 :allow{
     'command/chat-bot',
     'command/last-location',    
@@ -307,6 +310,7 @@ Roles.override_player_roles{
     ['Evy_D']={ "Moderator" },
     ['Foxologe']={ "Moderator" },
     ['Kerza_']={ "Moderator" },
+    ['RootWyrm']={ "Moderator" },
     ['SilentLog']={ "Moderator" },
     ['Weyoune']={ "Moderator" },
     ['bananna_manuk']={ "Moderator" },
