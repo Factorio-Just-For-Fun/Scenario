@@ -91,7 +91,7 @@ Permission_Groups.new_group('Guest')
     'reset_assembling_machine',
     'rotate_entity',
     'use_artillery_remote',
-    'launch_rocket',
+    -- 2.0 'launch_rocket',
     'cancel_research',
     'activate_cut',
     'flush_opened_entity_fluid',
