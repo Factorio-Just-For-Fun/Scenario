@@ -21,8 +21,8 @@ local function pos_to_string(pos)
 	return tostring(pos.x) .. "," .. tostring(pos.y)
 end
 
-local function pos_to_gps_string(pos)
-	return '[gps=' .. string.format('%.1f', pos.x) .. ',' .. string.format('%.1f', pos.y) .. ']'
+local function pos_to_gps_string(pos, surface)
+	return '[gps=' .. string.format('%.1f', pos.x) .. ',' .. string.format('%.1f', pos.y) .. ',' .. surface.name .. ']'
 end
 
 --- Print a message to all players who match the value of admin
@@ -53,7 +53,7 @@ if config.decon_area then
 		local items = e.surface.find_entities_filtered{area=e.area, force=player.force}
 
 		if #items > 250 then
-			print_to_players(true, {'deconlog.decon', player.name, e.surface.name, pos_to_gps_string(e.area.left_top), pos_to_gps_string(e.area.right_bottom), format_number(#items)})
+			print_to_players(true, {'deconlog.decon', player.name, e.surface.name, pos_to_gps_string(e.area.left_top, e.surface), pos_to_gps_string(e.area.right_bottom, e.surface), format_number(#items)})
 		end
 
 		add_log(get_secs() .. ',' .. player.name .. ',decon_area,' .. e.surface.name .. ',' .. pos_to_string(e.area.left_top) .. ',' .. pos_to_string(e.area.right_bottom))
