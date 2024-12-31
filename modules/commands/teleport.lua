@@ -74,20 +74,3 @@ Commands.new_command('bring', {'expcom-tp.description-bring'}, 'Teleports a play
     end
     from_player.print('Come here my friend')
 end)
-
---- Teleports you to a player.
--- @command goto
--- @tparam LuaPlayer player the player to teleport to, must be online (if dead goes to where they died)
-Commands.new_command('goto', {'expcom-tp.description-goto'}, 'Teleports you to a player.')
-:add_param('player', false, 'player-online')
-:add_alias('tp-me', 'tpme')
-:register(function(player, to_player)
-    if to_player.index == player.index then
-        -- return if attempting to teleport to self
-        return Commands.error{'expcom-tp.to-self'}
-    end
-    if not teleport(player, to_player) then
-        -- return if the teleport failed
-        return Commands.error{'expcom-tp.no-position-found'}
-    end
-end)

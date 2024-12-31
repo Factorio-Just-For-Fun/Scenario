@@ -1,13 +1,8 @@
 local Event = require 'utils.event' --- @dep utils.event
 local Global = require 'utils.global' --- @dep utils.global
-local config = require 'config.advanced_start' --- @dep config.advanced_start
-local use_silo_script = not config.disable_base_game_silo_script
 
 local util = require("util")
-local silo_script
-if use_silo_script then
-  silo_script = require("silo-script")
-end
+local silo_script = require("silo-script")
 
 local global = {}
 Global.register(global, function(tbl)

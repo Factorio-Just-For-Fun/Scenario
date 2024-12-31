@@ -88,8 +88,6 @@ Permission_Groups.new_group('Guest')
     'remove_train_station',
     'reset_assembling_machine',
     'rotate_entity',
-    'use_artillery_remote',
-    -- 2.0 'launch_rocket',
     'cancel_research',
     'flush_opened_entity_fluid',
     'flush_opened_entity_specific_fluid'
