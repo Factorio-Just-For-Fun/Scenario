@@ -67,7 +67,7 @@ Gui.element(function(definition, parent)
     local container = Gui.container(parent, definition.name, 200)
 
     -- Draw the scroll table for the players
-    local scroll_table = Gui.scroll_table(container, 184, 3)
+    local scroll_table = Gui.scroll_table(container, 184, 2)
 
     -- Change the style of the scroll table
     local scroll_table_style = scroll_table.style
