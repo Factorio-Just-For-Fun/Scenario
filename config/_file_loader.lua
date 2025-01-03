@@ -49,6 +49,7 @@ return {
     --- GUI
     'modules.gui.player-list',
     'modules.gui.server-ups',
+    'modules.gui.surveillance',
     'modules.gui.playerdata',
     'modules.gui.toolbar', -- must be loaded last to register toolbar handlers
 
