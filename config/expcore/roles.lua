@@ -175,7 +175,7 @@ Roles.new_role('Veteran','Vet')
 end)
 
 --- Standard User Roles
-local hours3, hours15 = 3*216000, 15*60
+local hours3, hours5 = 3*216000, 5*60
 Roles.new_role('Regular','Reg')
 :set_permission_group('Standard')
 :set_custom_color{r=79,g=155,b=163}
@@ -195,7 +195,7 @@ Roles.new_role('Regular','Reg')
     else
         local stats = Statistics:get(player, {})
         local playTime, afkTime, mapCount = stats.Playtime or 0, stats.AfkTime or 0, stats.MapsPlayed or 0
-        return playTime - afkTime >= hours15 and mapCount >= 3
+        return playTime - afkTime >= hours5
     end
 end)
 
