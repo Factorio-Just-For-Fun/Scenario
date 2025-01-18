@@ -42,6 +42,17 @@ Gui.element(function(_, parent, player_data)
 
     return player_name
 end)
+:on_click(function(player, element, event)
+    local selected_player_name = element.caption
+    local selected_player = game.players[selected_player_name]
+    if event.button == defines.mouse_button_type.left then
+        -- LMB will open the map to the selected player's physical position
+        event.player.set_controller{ type = defines.controllers.remote, position = selected_player.physical_position, surface = selected_player.physical_surface }
+    else
+        -- RMB will open the map to the selected player
+        event.player.set_controller{ type = defines.controllers.remote, position = selected_player.position, surface = selected_player.surface }
+    end
+end)
 
 -- Removes the three elements that are added as part of the base
 local function remove_player_base(parent, player)
